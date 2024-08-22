@@ -8,7 +8,7 @@
             <form>
                 <group>
                     <field name="picking_type_id" 
-                    domain="[('code','=','outgoing')]"
+                    domain="[('code','in',('outgoing','incoming'))]"
                     required="1"                    
                     />
                 </group>
