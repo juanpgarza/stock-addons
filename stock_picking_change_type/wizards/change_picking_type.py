@@ -32,6 +32,9 @@ class ChangePickingtypeWizard(models.TransientModel):
 
             raise UserError(msg)       
         
+        if self.picking_id.move_ids_without_package.filtered(lambda x: x.state == 'cancel'):
+            raise UserError("La operación tiene movimientos cancelados. Debe eliminarlos para poder hacer el cambio.")
+
         self.picking_id.move_line_ids.filtered(lambda x: x.state not in ['draft', 'done', 'cancel']).write({'qty_done': False})
         self.picking_id.action_cancel()
         self.picking_id.action_back_to_draft()
