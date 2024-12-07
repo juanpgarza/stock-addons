@@ -16,5 +16,5 @@
     "data": [
         'views/stock_request_views.xml',
         ],
-    "installable": True,
+    "installable": False,
 }

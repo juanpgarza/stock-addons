@@ -15,5 +15,5 @@
         # 'views/stock_picking_views.xml',        
         'wizards/change_picking_type_views.xml',
         ],
-    "installable": True,
+    "installable": False,
 }
