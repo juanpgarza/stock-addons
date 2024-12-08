@@ -26,7 +26,7 @@ class StockReturnPicking(models.TransientModel):
         if self.in_out == 'incoming' and self.wait_replacement:
             picking_type_id = self.picking_id.picking_type_id.id
             new_picking2 = self.picking_id.copy({
-                'move_lines': [],
+                'move_ids': [],
                 'picking_type_id': picking_type_id,
                 'state': 'draft',
                 'origin': self.picking_id.origin,

@@ -5,7 +5,7 @@
         <field name="inherit_id" ref="stock.view_stock_return_picking_form"/>
         <field name="arch" type="xml">
             <field name="location_id" position="after">
-                <field name="wait_replacement" string="Devolución con reemplazo" attrs="{'invisible':[('in_out','=','outgoing')]}"/>
+                <field name="wait_replacement" string="Devolución con reemplazo" invisible="in_out == 'outgoing'"/>
                 <field name="in_out" invisible="1"/> 
             </field>
         </field>
