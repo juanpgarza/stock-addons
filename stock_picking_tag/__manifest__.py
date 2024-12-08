@@ -4,7 +4,7 @@
 {
     "name": "stock_picking_tag",
     "summary": "",
-    "version": "15.0.1.0.0",
+    "version": "17.0.1.0.0",
     "category": "Stock",
     "website": "https://github.com/itsurnqn/stock-addons",
     "author": "ITSur",
@@ -15,5 +15,5 @@
         'views/stock_picking_tag_views.xml',        
         'security/ir.model.access.csv',
         ],
-    "installable": False,
+    "installable": True,
 }
