@@ -35,7 +35,8 @@ class ChangePickingtypeWizard(models.TransientModel):
         if self.picking_id.move_ids_without_package.filtered(lambda x: x.state == 'cancel'):
             raise UserError("La operación tiene movimientos cancelados. Debe eliminarlos para poder hacer el cambio.")
 
-        self.picking_id.move_line_ids.filtered(lambda x: x.state not in ['draft', 'done', 'cancel']).write({'qty_done': False})
+        # el campo qty_done se elimina en v17 https://github.com/OCA/OpenUpgrade/blob/a325c03a9530246f9a6a39320e2c2815c04a7050/openupgrade_scripts/scripts/stock/17.0.1.1/upgrade_analysis.txt#L28        
+        # self.picking_id.move_line_ids.filtered(lambda x: x.state not in ['draft', 'done', 'cancel']).write({'qty_done': False})
         self.picking_id.action_cancel()
         self.picking_id.action_back_to_draft()
 

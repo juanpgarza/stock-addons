@@ -9,7 +9,10 @@
     "website": "https://github.com/juanpgarza/stock-addons",
     "author": "juanpgarza",
     "license": "AGPL-3",
-    "depends": ["stock"],
+    "depends": [
+            "stock",
+            "stock_picking_back2draft",
+            ],
     "data": [
         'security/ir.model.access.csv',        
         # 'views/stock_picking_views.xml',        
