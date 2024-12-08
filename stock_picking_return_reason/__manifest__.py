@@ -4,7 +4,7 @@
 {
     "name": "stock_picking_return_reason",
     "summary": "",
-    "version": "15.0.1.0.0",
+    "version": "17.0.1.0.0",
     "category": "Warehouse Management",
     "website": "https://github.com/juanpgarza/stock-addons",
     "author": "juanpgarza",
@@ -20,5 +20,5 @@
         'wizards/stock_return_picking_views.xml',
         'security/ir.model.access.csv',
         ],
-    "installable": False,
+    "installable": True,
 }
