@@ -6,8 +6,8 @@
     "summary": "",
     "version": "17.0.1.0.0",
     "category": "Stock",
-    "website": "https://github.com/itsurnqn/stock-addons",
-    "author": "ITSur",
+    "website": "https://github.com/juanpgarza/stock-addons",
+    "author": "juanpgarza",
     "license": "AGPL-3",
     "depends": ["stock"],
     "data": [
