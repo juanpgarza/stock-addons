@@ -16,10 +16,10 @@ class StockPicking(models.Model):
     def _default_state(self):
         return self.env.ref('stock_picking_state_assigned.picking_state_detail_reservado')        
 
-    @api.model
-    def create(self,values):
+    @api.model_create_multi
+    def create(self,vals_list):
         # import pdb; pdb.set_trace()
-        res = super(StockPicking,self).create(values)
+        res = super(StockPicking,self).create(vals_list)
         res.state_detail_id = self._default_state()
         return res
 

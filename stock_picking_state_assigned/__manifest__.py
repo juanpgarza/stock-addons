@@ -11,8 +11,9 @@
     "license": "AGPL-3",
     "depends": [
             "stock", 
-            "stock_picking_state", 
-            "sale_order_type_invoice_policy",
+            "stock_picking_state", # adhoc
+            "sale_order_type_invoice_policy", # adhoc
+            "base_tier_validation", # OCA
         ],
     "data": [
         'data/data.xml',
