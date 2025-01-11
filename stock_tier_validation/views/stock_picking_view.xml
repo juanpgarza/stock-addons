@@ -11,11 +11,11 @@
             <button name="button_validate" position="before">
                 <button name="request_validation"
                     string="Request Validation"
-                    attrs="{'invisible': ['|','|',('need_validation', '!=', True),('rejected','=',True),('state','not in',['assigned', 'waiting', 'confirmed'])]}"
+                    invisible="not need_validation or rejected or state not in ['assigned', 'waiting', 'confirmed']"
                     type="object"/>
                 <button name="restart_validation"
                     string="Restart Validation"
-                    attrs="{'invisible': ['|',('review_ids', '=', []),('state','not in',['assigned', 'waiting', 'confirmed'])]}"
+                    invisible="not review_ids or state not in ['assigned', 'waiting', 'confirmed']"
                     type="object"/>
             </button>
             <header position="after">
@@ -24,22 +24,20 @@
                 <field name="rejected" invisible="1"/>
                 <div class="alert alert-warning"
                      role="alert"
-                     attrs="{'invisible': ['|', '|', '|',
-                     ('validated', '=', True), ('state', 'not in',['assigned', 'waiting', 'confirmed']),
-                     ('rejected', '=', True), ('review_ids', '=', [])]}"
+                     invisible="validated or state not in ['assigned', 'waiting', 'confirmed'] or rejected or not review_ids"
                      style="margin-bottom:0px;">
                     <p><i class="fa fa-info-circle"/>This Picking needs to be
                         validated.
                         <field name="can_review" invisible="1"/>
                         <button name="validate_tier"
                                 string="Validate"
-                                attrs="{'invisible': [('can_review', '=', False)]}"
+                                invisible="not can_review"
                                 type="object"
                                 class="oe_inline oe_button btn-success"
                                 icon="fa-thumbs-up"/>
                         <button name="reject_tier"
                                 string="Reject"
-                                attrs="{'invisible': [('can_review', '=', False)]}"
+                                invisible="not can_review"
                                 type="object"
                                 class="btn-icon btn-danger"
                                 icon="fa-thumbs-down"/>
@@ -47,19 +45,19 @@
                 </div>
                 <div class="alert alert-success"
                      role="alert"
-                     attrs="{'invisible': ['|', '|', ('validated', '!=', True), ('state','not in',['assigned', 'waiting', 'confirmed']), ('review_ids', '=', [])]}"
+                     invisible="not validated or state not in ['assigned', 'waiting', 'confirmed'] or not review_ids"
                      style="margin-bottom:0px;">
                     <p><i class="fa fa-thumbs-up"/> Operation has been <b>validated</b>!</p>
                 </div>
                 <div class="alert alert-danger"
                      role="alert"
-                     attrs="{'invisible': ['|', '|', ('rejected', '!=', True), ('state','not in',['assigned', 'waiting', 'confirmed']), ('review_ids', '=', [])]}"
+                     invisible="not rejected or state not in ['assigned', 'waiting', 'confirmed'] or not review_ids"
                      style="margin-bottom:0px;">
                     <p><i class="fa fa-thumbs-down"/> Operation has been <b>rejected</b>.</p>
                 </div>
             </header>
             <xpath expr="//form/div[hasclass('oe_chatter')]" position="before">
-                <field name="review_ids" widget="tier_validation" attrs="{'invisible':[('review_ids', '=', [])]}"/>
+                <field name="review_ids" widget="tier_validation" invisible="not review_ids"/>
             </xpath>
         </field>
     </record>
