@@ -29,9 +29,10 @@ class StockPicking(models.Model):
             if self.state_detail_id.next_state():
 
                 # si el próximo estado es final, le tengo que exigir que todo lo reservado este hecho
-                if not self.state_detail_id.next_state().next_state():
-                    if any(self.move_line_ids.filtered(lambda x: x.state not in ['draft', 'done', 'cancel']).filtered(lambda y: y.product_uom_qty != y.qty_done)):
-                        raise ValidationError("Todo debe estar como hecho")
+                # Revisar!! en v17 no existen los campos: product_uom_qty, qty_done 
+                # if not self.state_detail_id.next_state().next_state():
+                #     if any(self.move_line_ids.filtered(lambda x: x.state not in ['draft', 'done', 'cancel']).filtered(lambda y: y.product_uom_qty != y.qty_done)):
+                #         raise ValidationError("Todo debe estar como hecho")
 
                 # le tengo que asignar el siguiente estado en la secuencia
                 self.write({
