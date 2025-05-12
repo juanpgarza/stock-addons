@@ -9,9 +9,9 @@
                 <field name="show_analytic_account" invisible="1" />
                 <field
           name="analytic_account_id"
-          attrs="{'invisible': [('show_analytic_account','=',False)]}"
-          groups="analytic.group_analytic_accounting"
-        />
+          invisible="not show_analytic_account"
+          readonly="state in ['cancel', 'done']"
+          groups="analytic.group_analytic_accounting"/>
         </field>
         </field>
     </record>
@@ -24,7 +24,7 @@
                <field
           name="analytic_account_id"
           groups="analytic.group_analytic_accounting"
-        />
+         readonly="state in ['cancel', 'done']"/>
             </field>
         </field>
     </record>
