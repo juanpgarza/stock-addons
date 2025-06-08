@@ -10,7 +10,6 @@ class StockPicking(models.Model):
     analytic_account_id = fields.Many2one(
         comodel_name="account.analytic.account",
         string="Analytic Account",
-        states={"done": [("readonly", True)], "cancel": [("readonly", True)]},
     )
     show_analytic_account = fields.Boolean(
         string="Show Analytic Account",
