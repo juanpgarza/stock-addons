@@ -15,5 +15,5 @@
     "data": [
         'wizards/stock_return_picking_views.xml',
         ],
-    "installable": True,
+    "installable": False,
 }

@@ -17,5 +17,5 @@
         'views/stock_picking_views.xml',
         'views/report_deliveryslip.xml',
         ],
-    "installable": True,
+    "installable": False,
 }

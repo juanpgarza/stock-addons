@@ -17,5 +17,5 @@
         'views/stock_request_views.xml',
         'views/stock_picking_views.xml',        
         ],
-    "installable": True,
+    "installable": False,
 }

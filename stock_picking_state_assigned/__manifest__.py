@@ -19,5 +19,5 @@
         'data/data.xml',
         'views/stock_picking_views.xml',
         ],
-    "installable": True,
+    "installable": False,
 }

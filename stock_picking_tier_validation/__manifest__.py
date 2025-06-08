@@ -12,6 +12,6 @@
     "license": "AGPL-3",
     "depends": ["stock", "base_tier_validation"],
     "data": ["views/stock_picking_views.xml"],
-    "installable": True,
+    "installable": False,
     "development_status": "Alpha",
 }
