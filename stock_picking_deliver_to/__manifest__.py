@@ -4,7 +4,7 @@
 {
     "name": "stock_picking_deliver_to",
     "summary": "",
-    "version": "17.0.1.0.0",
+    "version": "18.0.1.0.0",
     "category": "Warehouse Management",
     "website": "https://github.com/juanpgarza/stock-addons",
     "author": "juanpgarza",
@@ -17,5 +17,5 @@
         'views/stock_picking_views.xml',
         'views/report_deliveryslip.xml',
         ],
-    "installable": False,
+    "installable": True,
 }
