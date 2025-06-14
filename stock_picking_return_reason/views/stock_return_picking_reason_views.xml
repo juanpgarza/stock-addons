@@ -2,23 +2,24 @@
 <odoo>
 
     <record id="stock_return_picking_reason_tree_view" model="ir.ui.view">
-        <field name="name">stock.return.picking.reason.tree</field>
+        <field name="name">stock.return.picking.reason.list</field>
         <field name="model">stock.return.picking.reason</field>
         <field name="arch" type="xml">
-		<tree string="Motivos devolución" >
+		<list >
 			<field name="name" />
-		</tree>
+		</list>
 	    </field>
 	</record>
 
-    <act_window id="action_stock_return_picking_reason"  
-            name="Motivos devolución"
-            res_model="stock.return.picking.reason" 
-            view_mode="tree,form"
-            target="current"/>
+    <record id="action_stock_return_picking_reason" model="ir.actions.act_window">
+        <field name="name">Motivos devolución</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">stock.return.picking.reason</field>
+        <field name="view_mode">list,form</field>
+    </record>
 
     <menuitem action="action_stock_return_picking_reason" id="menu_stock_return_picking_reason" 
-    parent="stock.menu_stock_config_settings" name="Motivos devolución" sequence="2" />
+    parent="stock.menu_warehouse_config" name="Motivos devolución" sequence="2" />
 
  	<!-- account.account_management_menu  -->
 
