@@ -4,7 +4,7 @@
 {
     "name": "stock_picking_tag",
     "summary": "",
-    "version": "17.0.1.0.0",
+    "version": "18.0.1.0.0",
     "category": "Stock",
     "website": "https://github.com/juanpgarza/stock-addons",
     "author": "juanpgarza",
@@ -15,5 +15,5 @@
         'views/stock_picking_tag_views.xml',        
         'security/ir.model.access.csv',
         ],
-    "installable": False,
+    "installable": True,
 }
