@@ -10,7 +10,7 @@
         <field name="inherit_id" ref="stock.view_picking_form" />
         <field name="arch" type="xml">
 
-            <xpath expr="//page[@name='operations']/field/tree/field[@name='product_uom']" position="after" optional="show">
+            <xpath expr="//page[@name='operations']/field/list/field[@name='product_uom']" position="after" optional="show">
                 <field name="note" />
             </xpath>
         </field>
