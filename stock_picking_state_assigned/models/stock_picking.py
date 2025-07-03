@@ -71,3 +71,8 @@ class StockPicking(models.Model):
         res.append('state_detail_id')
         res.append('state_detail_user_id')
         return res
+
+    @api.constrains("state_detail_id")
+    def change_state_detail_id(self):
+        for rec in self:
+            return True
