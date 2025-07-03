@@ -4,7 +4,7 @@
 {
     "name": "stock_picking_state_assigned",
     "summary": "",
-    "version": "17.0.1.0.0",
+    "version": "18.0.1.0.0",
     "category": "Stock",
     "website": "https://github.com/juanpgarza/stock-addons",
     "author": "juanpgarza",
@@ -19,5 +19,5 @@
         'data/data.xml',
         'views/stock_picking_views.xml',
         ],
-    "installable": False,
+    "installable": True,
 }
