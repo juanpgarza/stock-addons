@@ -52,15 +52,16 @@ class StockMove(models.Model):
         product_qty = self.product_qty
         if self.picking_id.picking_type_code == "outgoing":
             product_qty = -1 * product_qty
+        # import pdb; pdb.set_trace()
         vals = {
             "stock_move_id": self.id,
             "account_id": self.picking_id.analytic_account_id.id,
-            "group_id": self.picking_id.analytic_account_id.group_id.id,
+            # "group_id": self.picking_id.analytic_account_id.group_id.id,
             "partner_id": self.picking_id.partner_id.id,
             "product_id": self.product_id.id,
             "product_uom_id": self.product_uom.id,
             "unit_amount": product_qty,
-            "amount": product_qty * self._get_price_unit(),
+            "amount": product_qty * self.product_id.standard_price,
             "name": "{} {}".format(self.picking_id.name, self.name),
         }
         return vals
